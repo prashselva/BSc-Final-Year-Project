@@ -29,5 +29,5 @@ The Classifier/model_exploration.py file was used to test different types of mod
 
 
 ## Notes
-TwitterAPI keys are required in the relevant file
-A sample of the dataset is provided
+1) TwitterAPI keys are required in the relevant file
+2) A sample of the dataset is provided
