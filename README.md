@@ -1,49 +1,28 @@
-# Getting Started with the Sentiment Analyser API
+# Getting Started with the Sentiment Analyser Tool
 
 
 ## Getting Started
-In order to start the API application, the app.py file needs to be run.
+In order to setup the application we need to run the API and the UI. Information on getting setup on these exist within the README.md in both the API and UI directory.
 
-With the command:
-`python api.py`
+## Information
 
-<br>
-
-## Configuration
-
-The "getHashtagSentiment" uses the Twitter API to retrieve tweets which requires Twiter API keys. If you need to update the API keys this can be obtained via the following link: https://developer.twitter.com/
-
-The twitter keys are stored in the TwitterAPI.py file
-
-<br>
-
-## API Endpoints
-
-This project is a Python Flask API. Which exposes 2 HTTP POST endpoints:
-
-1) http://localhost:3000/getSentenceSentiment
-2) http://localhost:3000/getHashtagSentiment
-
-Sample request body for getSentenceSentiment:
-
-`{"text": "I hate broccoli"}`
-
-Sample response for getSentenceSentiment:
+The Classifier directory consists of Python files for the development of the proccessed dataset and the files for creating TFIDF, SVD and classifier models.
+This tool uses a classifier to analyse text and tweets and retrieve their predicted sentiment. 
 
 
-`{"text": "I hate broccoli", "sentiment": "Negative"}`
+The Data directory consists of the raw data used for training the data along with any subsequent files which was outputted from the preprocessing for the classifier. 
 
-Sample request body for getHashtagSentiment:
 
-`{"hashtag": "Bitcoin"}`
+The Diagrams directory consists of analysis of different models to visualise their efficiency.
 
-Sample response for getHashtagSentiment:
 
-`{"classified_tweets": [{"tweet": "RT @Hayess5178: $VRA @verasitytech On #Kucoin \n\n#Verasity Looking good, Following my
-chart from 4 days ago. #VRA has broken $0.0075 resista\u2026", "username": "Simon Hayes", "sentiment": "Positive"},
-{"tweet": "@CryptoLandEx @bridge_oracle @Bitcoin @ethereum @eth_classic @LTCFoundation @Cardano @EOSnFoundation
-@CardanoFeed\u2026 https://t.co/x1aIOEPZS0", "username": "Kabiru Abubakar", "sentiment": "Positive"}, {"tweet": "they
-never harvest and leak the DMs, it's always just postin' bullshit or bitcoin", "username": "Tom Joad The Wet Sprocket",
-"sentiment": "Negative"}, {"tweet": "RT @WhaleWire: JUST IN: $XRP is now the #1 most popular altcoin in South Korea,
-with trading volumes surging well beyond other cryptocurren\u2026", "username": "gravel", "sentiment": "Positive"}]}`
+The Models directory consists of the resulting TFIDF, SVD and classifier models produced from the classifier directory.
 
+## How to obtain models from raw data
+
+1) Uncompress the compressed data folder
+2) Run Classifier/data_cleaning.py - Which cleans the data and produces a new cleaned file
+3) Run Classifier/data_preprocessiing.py - Which preprocessed the data to be ready to train the model
+4) Run Classifier/model_building.py - Which produces the required models and outputs it to the Models directory
+
+The Classifier/model_exploration.py file was used to test different types of models and their efficiency.
