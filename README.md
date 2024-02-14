@@ -26,3 +26,8 @@ The Models directory consists of the resulting TFIDF, SVD and classifier models 
 4) Run Classifier/model_building.py - Which produces the required models and outputs it to the Models directory
 
 The Classifier/model_exploration.py file was used to test different types of models and their efficiency.
+
+
+## Notes
+TwitterAPI keys are required in the relevant file
+A sample of the dataset is provided
